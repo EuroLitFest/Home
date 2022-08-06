@@ -52,8 +52,34 @@
         <img src="./images/logo.png" alt="" />
         <h3>Euroschool North Campus Bangalore Presents</h3>
         <h1 id="head">Belles Lettres Lit Fest 2022</h1>
-        <a href="#oldlitfest" id="abutton">Learn More</a>
+        <a href="#second" id="abutton">Learn More</a>
       </div>
+    </section>
+    <section class="litfest" id="second">
+      <div class="textinsecond">
+        <h1>‘Literature is one of the most significant
+          expressions of humanity.’</h1>
+        <div class="line"></div>
+        <p>A single word can make you think of a thousand pictures and make your mind weave up countless stories.
+          Expressing these stories in your unique way will always leave an impression on the listeners. So, let us
+          join to communicate and express out loud, our thoughts through words, about the intricacies of language
+          and literature, in a fun-filled event - The Lit-Fest! </p>
+        <a href="#register">Register Now!</a>
+      </div>
+      <div class="countdown" id="countdown"> 
+        <h2>The Countdown Begins..</h2>
+        <div class="wrappper">
+          <div class="timer">
+            <h3 id="days">00</h3>
+            <h4>Days</h4>
+          </div>
+          <div class="timer">
+            <h3 id="hours">00</h3>
+            <h4>Hours</h4>
+          </div>
+        </div>
+      </div>
+    </section>
     </section>
     <section id="oldlitfest" class="oldlitfest">
       <div class="textindiv">
@@ -114,12 +140,13 @@
           <div class="layer">
             <h3>Oratoria</h3>
             <p>
-              Originating in Japan, Haiku is the shortest form of poetry in the world.
-              In a short descriptive verse, it captures a moment in the poet’s life or
-              simply expresses the beauty of nature. Haiku is an unrhymed Japanese
-              poetic form that consists of 17 syllables arranged in 3 lines containing 5,
-              7 and 5 syllables respectively.
-            </p>
+              Drama was introduced to the world from Europe by the
+              Romans, and auditoriums were constructed across the
+              country for this purpose. Drama ensures student
+              participation. It provides exposure to the language and
+              improves communication skills. It augments vocabulary
+              and instills proper sentence structure in the minds of the
+              learners.            </p>
           </div>
         </div>
         <div class="col">
@@ -153,9 +180,12 @@
         </div>
       </div>
     </section>
-    <section class="loginforregistrations">
-      <h1>Register your school!</h1>
-      <a href="./pages/login.html">Login</a>
+    <section class="loginforregistrations" id="register">
+      <h1>Register Here!</h1>
+      <div class="buttons">
+        <a href="./pages/individual.html">Individual</a>
+        <a href="./pages/login.html">School</a>
+      </div>
     </section>
     <section class="footer">
       <h4>Euroschool North Campus Bangalore</h4>
@@ -176,11 +206,31 @@
     </section>
     <!-- <script src="./javascript/script.js" type="modulle"></script> -->
     <script>
+      var finaldate = new Date("August 25, 2022").getTime();
+      var x = setInterval(() => {
+        var timerightnow = new Date().getTime()
+        var timelleft = finaldate - timerightnow
+        var daysleft = Math.floor(timelleft / (1000 * 60 * 60 *24));
+        var hoursleft = Math.floor((timelleft % (1000 * 60 * 60 * 24) / (1000*60*60)))
+        var minutes = Math.floor((timelleft % (1000 * 3600 ) / 60000));
+        if (hoursleft < 10) {
+          hoursleft = "0" + hoursleft;
+        }
+        document.getElementById("hours").innerHTML = hoursleft;
+        document.getElementById("days").innerHTML = daysleft;
+        if (timelleft < 0){
+          clearInterval(x)
+          document.getElementById("timertext").innerHTML = "DONE"
+        }
+      }, 1000);
       var heading = document.getElementById("head");
       var abutton = document.getElementById("abutton");
+      // var countdown = document.getElementById("countdown");
       setTimeout(() => {
         heading.style.animation = "hanimation 2.5s";
         abutton.style.animation = "hanimation 2.5s";
+        // countdown.style.animation = "hanimation 2.5s";
+        // countdown.style.opacity = 1;
         abutton.style.opacity = 1;
         heading.style.opacity = 1;
       }, 1000);
