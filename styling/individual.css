@@ -181,20 +181,20 @@ form .txt_field{
 }
 /* #region gohome */
   .phonewarning{
-    display: none;
+    /* display: none; */
     width: 60%;
     margin: 30vh auto;
     text-align: center;
   }
   .phonewarning h1{
     /* padding: 0 20%; */
-    font-size: 20px;
+    font-size: 4vw;
     margin-bottom: 20px;
   }
   .phonewarning h3{
     font-weight: 100;
-    padding-bottom: 10px;
-    font-size: 15px;
+    padding-bottom: 5%;
+    font-size: 2vw;
   }
   .phonewarning a{
     text-decoration: none;
@@ -203,6 +203,7 @@ form .txt_field{
     font-family: "Roboto";
     border: 2px solid rgb(255, 237, 215);
     padding: 10px 20px;
+    font-size: 1vw;
     border-radius: 22px;
     font-weight: 100;
     transition: .4s;
