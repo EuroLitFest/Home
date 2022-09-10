@@ -206,23 +206,7 @@
     </section>
     <!-- <script src="./javascript/script.js" type="modulle"></script> -->
     <script>
-      var finaldate = new Date("August 25, 2022").getTime();
-      var x = setInterval(() => {
-        var timerightnow = new Date().getTime()
-        var timelleft = finaldate - timerightnow
-        var daysleft = Math.floor(timelleft / (1000 * 60 * 60 *24));
-        var hoursleft = Math.floor((timelleft % (1000 * 60 * 60 * 24) / (1000*60*60)))
-        var minutes = Math.floor((timelleft % (1000 * 3600 ) / 60000));
-        if (hoursleft < 10) {
-          hoursleft = "0" + hoursleft;
-        }
-        document.getElementById("hours").innerHTML = hoursleft;
-        document.getElementById("days").innerHTML = daysleft;
-        if (timelleft < 0){
-          clearInterval(x)
-          document.getElementById("timertext").innerHTML = "DONE"
-        }
-      }, 1000);
+
       var heading = document.getElementById("head");
       var abutton = document.getElementById("abutton");
       // var countdown = document.getElementById("countdown");
